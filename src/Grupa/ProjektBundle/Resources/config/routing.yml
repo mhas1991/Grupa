@@ -1,0 +1,3 @@
+grupa_projekt_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: GrupaProjektBundle:Default:index }
