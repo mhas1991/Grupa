@@ -1,3 +1,6 @@
 grupa_projekt_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: GrupaProjektBundle:Default:index }
+    path:     /
+    defaults: { _controller: GrupaProjektBundle:Index:index }
+grupa_projekt_index:
+    path:     /index
+    defaults: { _controller: GrupaProjektBundle:Index:index }
