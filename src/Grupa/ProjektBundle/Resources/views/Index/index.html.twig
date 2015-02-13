@@ -1,7 +1,5 @@
-
-
-<meta charset="UTF-8">
 <html>
+<meta charset="UTF-8">
 	<head>
 		<title>FILMOMANIAK</title>
 	<!-- Latest compiled and minified CSS -->
@@ -13,35 +11,26 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>	
 	</head>
-	
-		<ul class="nav nav-pills">
-  			<li role="presentation" class="active"><a href="index.html.twig">Home <span class="glyphicon glyphicon-home"></span></a></li>
+	<body style="background-color:orange">
+		<h1 style="background-color:lightgreen">Witamy w FILMOMANIAK!</h1>
+	<ul class="nav nav-pills">
+  			<li role="presentation" class="active"><a href="http://v-ie.uek.krakow.pl/~s175916/app_dev.php/">Home <span class="glyphicon glyphicon-home"></span></a></li>
+  			<li role="presentation" class="active"><a href="http://v-ie.uek.krakow.pl/~s175916/app_dev.php/filmy">Filmy <span class="glyphicon glyphicon-film"></span></a></li>
+  			<li role="presentation" class="active"><a href="http://v-ie.uek.krakow.pl/~s175916/app_dev.php/login">Logowanie <span class="glyphicon glyphicon-user"></span></a></li>
   			
-  		</ul>
+  			
+  	</ul>
   		<br>
-  	<!-- {% include 'filmy.index.html.twig' %} -->
+		
+  	{% include 'GrupaProjektBundle:Filmy:filmy.index.html.twig' %}
 
   	
-  	<h1>Filmy <span class="glyphicon glyphicon-film"></span></h1>
+  	
+  	
 
-  	<ul class="nav nav-tabs">
-		<li role="presentation" class="active"><a href="#">Lista dostępnych filmów</a></li>
-		<li role="presentation" class="active"><a href="#">Lista popularnych filmów</a></li>
-		<li role="presentation" class="active"><a href="#">Najczęściej recenzowane</a></li>
-		<li role="presentation" class="active"><a href="#">Gatunki</a></li>
-	</ul>
-  	<br>
-  	<a href="whiplash.filmy.index.html.twig"><h3>Whiplash</h3></a>
-  	<div class="row">
-  		<div class="col-xs-6 col-md-3">
-  			<a href="whiplash.filmy.index.html.twig" class="thumbnail">
-  				<img src="http://1.fwcdn.pl/po/88/47/698847/7655940.3.jpg" alt="">
-  			</a>
-  		</div>
-  	</div>
-  	<a href="login.html.twig" class="btn btn-primary">Logowanie <span class="glyphicon glyphicon-user"></span></a>
+
 		
 	
-	
+	</body>
 
 </html>
