@@ -1,4 +1,9 @@
-<body style="background-color:orange">
+{% block header %}
+	<head>
+		<title>FILMY INDEX</title>
+{% endblock %}
+{% block content %}
+
 <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 
@@ -7,7 +12,7 @@
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> 
-<a href="http://v-ie.uek.krakow.pl/~s175916/app_dev.php/"><h1>Filmy <span class="glyphicon glyphicon-film"></span></h1></a>
+
 
   	<ul class="nav nav-tabs">
 		<li role="presentation" class="active"><a href="#">Dostępne filmy</a></li>
@@ -16,25 +21,8 @@
 		<li role="presentation" class="active"><a href="#">Gatunki</a></li>
 	</ul>
   	<br>
-  	<a href="http://v-ie.uek.krakow.pl/~s175916/app_dev.php/filmy/whiplash"><h3>Whiplash</h3></a>
-  	<div class="row">
-  		<div class="col-xs-6 col-md-3">
-  			<a href="http://v-ie.uek.krakow.pl/~s175916/app_dev.php/filmy/whiplash" class="thumbnail">
-  				<img src="http://1.fwcdn.pl/po/88/47/698847/7655940.3.jpg" alt="">
-  			</a>
-  		</div>
-  	</div>
+  	
+  		
 <br>
-    
-
-    <a href="http://v-ie.uek.krakow.pl/~s175916/app_dev.php/filmy/gratajemnic"><h3>Gra Tajemnic</h3></a>
-    <div class="row">
-      <div class="col-xs-6 col-md-3">
-        <a href="http://v-ie.uek.krakow.pl/~s175916/app_dev.php/filmy/gratajemnic" class="thumbnail">
-          <img src="http://1.fwcdn.pl/po/40/05/644005/7663425.3.jpg" alt="">
-        </a>
-      </div>
-    </div>
-
-</body>
+{% endblock %}
 
