@@ -14,6 +14,6 @@ class FilmyController extends Controller
 
 	public function movieAction($slug)
 	{
-		return $this->render('GrupaProjektBundle:Filmy:'.$slug.'.index.html.twig');
+		return $this->render('GrupaProjektBundle:Filmy:items'.$slug.'.index.html.twig');
 	}
 }
