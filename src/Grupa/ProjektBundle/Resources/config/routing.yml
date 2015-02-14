@@ -10,7 +10,7 @@ grupa_projekt_filmy:
     path:    /filmy
     defaults: { _controller:GrupaProjektBundle:Filmy:filmy }
 
-grupa_projekt_movie_slug:
+grupa_projekt_movie:
     path:    /filmy/{slug}
     defaults: { _controller:GrupaProjektBundle:Filmy:movie }
 

@@ -1,26 +1,15 @@
+{% extends "GrupaProjektBundle::menu.html.twig" %}
 {% block header %}
 	<head>
 		<title>FILMOMANIAK</title>
 {% endblock %}
 {% block content %}
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>	
-		
-		<ul class="nav nav-pills">
-  			<li role="presentation" class="active"><a href="index.html.twig">Home <span class="glyphicon glyphicon-home"></span></a></li>	
-  		</ul>
-  		<br>
+	
   	
   	<h1>Filmy <span class="glyphicon glyphicon-film"></span></h1>
 
   	<ul class="nav nav-tabs">
-		<li role="presentation" class="active"><a href="#">Lista dostępnych filmów</a></li>
+		<li role="presentation" class="active"><a href="{{path('grupa_projekt_filmy')}}"><span class="glyphicon glyphicon-list-alt"></span> Lista Filmów</a></li>
 		<li role="presentation" class="active"><a href="#">Lista popularnych filmów</a></li>
 		<li role="presentation" class="active"><a href="#">Najczęściej recenzowane</a></li>
 		<li role="presentation" class="active"><a href="#">Gatunki</a></li>

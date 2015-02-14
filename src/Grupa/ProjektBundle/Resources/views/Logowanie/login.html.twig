@@ -1,7 +1,5 @@
 {% extends "GrupaProjektBundle::layout.html.twig" %}
-<!DOCTYPE html>
-<meta charset="UTF-8">
-<html>
+{% block menu %}
 	<head>
 		<title>Logowanie</title>
 		<!-- Latest compiled and minified CSS -->
@@ -13,7 +11,7 @@
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 	</head>
-	<body style="background-color:pink">
+	
 		<form action="http://v-ie.uek.krakow.pl/~s175916/app_dev.php/zalogowany" method="POST">
 			<div class="input-group">
   			<input type="text" name="email" class="form-control" placeholder="adres email" aria-describedby="basic-addon1">
@@ -26,5 +24,6 @@
   			<br>
   			<img src="http://www.podpiselektroniczny.kalisz.pl/wp-content/uploads/2013/05/klucz.jpg" width="500" height="500"/>
 		</form>
-	</body>
-</html>
+	
+
+{% endblock %}

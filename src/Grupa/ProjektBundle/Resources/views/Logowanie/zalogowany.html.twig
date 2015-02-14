@@ -1,7 +1,5 @@
 {% extends "GrupaProjektBundle::layout.html.twig" %}
-<!DOCTYPE html>
-<meta charset="UTF-8">
-<html>
+{% block menu %}
 	<head>
 		<title>Witamy!</title>
 		<!-- Latest compiled and minified CSS -->
@@ -13,7 +11,7 @@
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 	</head>
-	<body style="background-color:orange">
+
 		<h1>Witamy! Zostałeś zalogowany jako: <?php echo $_POST["email"]; ?></h1>
 		<ul class="nav nav-tabs">
   			<li role="presentation" class="active"><a href="http://v-ie.uek.krakow.pl/~s175916/app_dev.php/">Home <span class="glyphicon glyphicon-home"></span></a></li>
@@ -27,5 +25,4 @@
 		<input type="submit" class="btn btn-primary" value="Wyloguj się">
 		<span class="glyphicon glyphicon-log-out"></span>	
 		</form>
-	</body>
-</html>	
+{% endblock %}

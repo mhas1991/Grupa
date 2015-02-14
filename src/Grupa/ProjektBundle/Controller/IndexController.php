@@ -14,17 +14,17 @@ class IndexController extends Controller
 
 	public function logowanieAction()
 	{
-		return $this->render('GrupaProjektBundle:Index:login.html.twig');
+		return $this->render('GrupaProjektBundle:Logowanie:login.html.twig');
 	}
 
 	public function zalogowanyAction()
 	{
-		return $this->render('GrupaProjektBundle:Index:zalogowany.html.twig');
+		return $this->render('GrupaProjektBundle:Logowanie:zalogowany.html.twig');
 	}
 
 	public function recenzjaAction()
 	{
-		return $this->render('GrupaProjektBundle:Index:recenzja.zalogowany.html.twig');
+		return $this->render('GrupaProjektBundle:Logowanie:recenzja.zalogowany.html.twig');
 	}
 
 }
