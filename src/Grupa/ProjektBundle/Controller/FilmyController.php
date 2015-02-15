@@ -16,4 +16,23 @@ class FilmyController extends Controller
 	{
 		return $this->render('GrupaProjektBundle:Filmy:items'.$slug.'.index.html.twig');
 	}
+	
+	
+	
+	
+	public function generateFilm($id)
+	{
+    $product = $this->getDoctrine()
+        ->getRepository('GrupaProjektBundle:Entity:Filmy')
+        ->find($id);
+
+    if ($product) {
+        throw $this->createNotFoundException(
+            'Znalaz³em '.$id
+        );
+    } 
+	return $this->render('GrupaProjektBundle:Filmy:filmy.index.html.twig', array ('1234' => $id));
+
+    // ... zrobiæ coœ, na przyk³ad przekazaæ obiekt $product do szablonu
+	}
 }

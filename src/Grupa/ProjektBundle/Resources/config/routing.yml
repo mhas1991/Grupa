@@ -15,7 +15,7 @@ grupa_projekt_movie:
     defaults: { _controller:GrupaProjektBundle:Filmy:movie }
 
 grupa_projekt_logowanie:
-    path:    /login
+    path:    security/login
     defaults: { _controller:GrupaProjektBundle:Index:logowanie }
 
 grupa_projekt_zalogowany:
@@ -25,3 +25,7 @@ grupa_projekt_zalogowany:
 grupa_projekt_recenzja:
     path:    /zalogowany/recenzja
     defaults: { _controller:GrupaProjektBundle:Index:recenzja }
+
+grupa_projekt_index:
+    path:    /
+    defaults: { _controller:GrupaProjektBundle:DodajFilmy:dodajFilm }
