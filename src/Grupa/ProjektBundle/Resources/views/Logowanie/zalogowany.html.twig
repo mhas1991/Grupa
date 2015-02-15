@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<meta charset="UTF-8">
-<html>
+{% extends "GrupaProjektBundle::layout.html.twig" %}
+{% block menu %}
 	<head>
 		<title>Witamy!</title>
 		<!-- Latest compiled and minified CSS -->
@@ -12,19 +11,18 @@
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 	</head>
-	<body style="background-color:orange">
+
 		<h1>Witamy! Zostałeś zalogowany jako: <?php echo $_POST["email"]; ?></h1>
 		<ul class="nav nav-tabs">
-  			<li role="presentation" class="active"><a href="http://v-ie.uek.krakow.pl/~s175916/app_dev.php/">Home <span class="glyphicon glyphicon-home"></span></a></li>
+  			<li role="presentation" class="active"><a href="http://v-ie.uek.krakow.pl/~s118000/app_dev.php/">Home <span class="glyphicon glyphicon-home"></span></a></li>
   			<li role="presentation" class="active"><a href="#">Zamówienia </a></li>
-  			<a href="http://v-ie.uek.krakow.pl/~s175916/app_dev.php/zalogowany/recenzja" class="btn btn-primary" role="button">Dodaj recenzję <span class="glyphicon glyphicon-eye-open"></span></a></li>
+  			<a href="http://v-ie.uek.krakow.pl/~s118000/app_dev.php/zalogowany/recenzja" class="btn btn-primary" role="button">Dodaj recenzję <span class="glyphicon glyphicon-eye-open"></span></a></li>
   			<li role="presentation" class="active"><a href="#">Koszyk
   				<span class="glyphicon glyphicon-shopping-cart"></span></a></li>
   		</ul>
   		<br>
-		<form action="http://v-ie.uek.krakow.pl/~s175916/app_dev.php/" method="POST">
+		<form action="http://v-ie.uek.krakow.pl/~s118000/app_dev.php/" method="POST">
 		<input type="submit" class="btn btn-primary" value="Wyloguj się">
 		<span class="glyphicon glyphicon-log-out"></span>	
 		</form>
-	</body>
-</html>	
+{% endblock %}
