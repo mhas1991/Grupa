@@ -5,6 +5,8 @@ namespace Grupa\ProjektBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * Filmy
+ * 
  * @ORM\Entity
  * @ORM\Table(name="filmy")
  */
@@ -38,6 +40,16 @@ use Doctrine\ORM\Mapping as ORM;
       */
 	private $cena;
 
+	/**
+      * @ORM\Column(type="decimal", scale=2)
+      */
+	private $ocena;	
+	
+	/**
+      * @ORM\Column(type="text")
+      */
+	private $listaAktorow;
+	
 
     /**
      * Get id
@@ -139,5 +151,51 @@ use Doctrine\ORM\Mapping as ORM;
     public function getCena()
     {
         return $this->cena;
+    }
+
+    /**
+     * Set ocena
+     *
+     * @param string $ocena
+     * @return Filmy
+     */
+    public function setOcena($ocena)
+    {
+        $this->ocena = $ocena;
+
+        return $this;
+    }
+
+    /**
+     * Get ocena
+     *
+     * @return string 
+     */
+    public function getOcena()
+    {
+        return $this->ocena;
+    }
+
+    /**
+     * Set listaAktorow
+     *
+     * @param string $listaAktorow
+     * @return Filmy
+     */
+    public function setListaAktorow($listaAktorow)
+    {
+        $this->listaAktorow = $listaAktorow;
+
+        return $this;
+    }
+
+    /**
+     * Get listaAktorow
+     *
+     * @return string 
+     */
+    public function getListaAktorow()
+    {
+        return $this->listaAktorow;
     }
 }
