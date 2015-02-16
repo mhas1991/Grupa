@@ -1,5 +1,7 @@
-{% extends "GrupaProjektBundle::layout.html.twig" %}
-{% block menu %}
+{% extends "FOSUserBundle::layout.html.twig" %}
+{% trans_default_domain 'FOSUserBundle' %}
+{% block fos_user_content %}
+{% block header %}
 	<head>
 		<title>Logowanie</title>
 		<!-- Latest compiled and minified CSS -->
@@ -11,21 +13,10 @@
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 	</head>
-	
-		<form action="http://v-ie.uek.krakow.pl/~s118000/app_dev.php/zalogowany" method="POST">
-			<div class="input-group">
-  			<input type="text" name="email" class="form-control" placeholder="adres email" aria-describedby="basic-addon1">
-  			 <span class="input-group-addon" id="basic-addon1">@example.com</span>
-  			</div>
-  			<input type="password" class="form-control" placeholder="hasło">
-  			<br>
-  			<input type="submit" class="btn btn-primary" value="Zaloguj się">
-  			<span class="glyphicon glyphicon-log-in"></span>
-  			<br>
-  			<img src="http://www.podpiselektroniczny.kalisz.pl/wp-content/uploads/2013/05/klucz.jpg" width="500" height="500"/>
-		</form>
-	
+	{% endblock %}
+<form action="http://v-ie.uek.krakow.pl/~s175916/app_dev.php/zalogowany" method="POST">
 
+<<<<<<< HEAD
 {% endblock %}
 {% extends "FOSUserBundle::layout.html.twig" %}
 {% trans_default_domain 'FOSUserBundle' %}
@@ -43,6 +34,24 @@
 <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
 <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
 </form>
+=======
+	<div class="input-group">
+	<input type="text" id="username" name="_username" class="form-control" placeholder="{{ 'adres email'|trans }}"
+		aria-describedby="basic-addon1" value="" required="required" /><span class="input-group-addon" id="basic-addon1">@example.com</span>
+	</div>
+
+<input type="password" id="password" name="_password" class="form-control" placeholder="{{ 'podaj hasło'|trans }}" required="required" />
+<input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+<label for="remember_me">{{ 'Pamiętaj mnie'|trans }}</label>
+<br> 
+<input type="submit" id="_submit" name="_submit" class="btn btn-primary" value="{{ 'Zaloguj się'|trans }}" /> <span class="glyphicon glyphicon-log-in"></span>
+<br>
+</form>
+<img src="http://www.podpiselektroniczny.kalisz.pl/wp-content/uploads/2013/05/klucz.jpg" width="500" height="500"/>
+
+
+
+>>>>>>> upstream/master
 {% endblock fos_user_content %}
 
 
