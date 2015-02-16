@@ -1,9 +1,12 @@
-{% extends "FOSUserBundle::layout.html.twig" %}
+{% extends "GrupaProjektBundle::menu.html.twig" %}
+
+
 {% trans_default_domain 'FOSUserBundle' %}
 {% block fos_user_content %}
-{% block header %}
-	<head>
+	
+		{% block title %}
 		<title>Logowanie</title>
+		{% endblock %}
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 
@@ -12,46 +15,35 @@
 
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-	</head>
-	{% endblock %}
-<form action="http://v-ie.uek.krakow.pl/~s175916/app_dev.php/zalogowany" method="POST">
+{% block content %}
+<div class="container">
+<h2 class="form-signin-heading">Proszę się zalogować</h2>
+<br>
+<form class="form-signin" action="http://v-ie.uek.krakow.pl/~s175916/app_dev.php/zalogowany" method="POST" width="200" height="200">
 
-<<<<<<< HEAD
-{% endblock %}
-{% extends "FOSUserBundle::layout.html.twig" %}
-{% trans_default_domain 'FOSUserBundle' %}
-{% block fos_user_content %}
-{% if error %}
-<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-{% endif %}
-<form action="{{ path("fos_user_security_check") }}" method="post">
-<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-<label for="username">{{ 'security.login.username'|trans }}</label>
-<input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
-<label for="password">{{ 'security.login.password'|trans }}</label>
-<input type="password" id="password" name="_password" required="required" />
-<input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-<label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
-<input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
-</form>
-=======
 	<div class="input-group">
-	<input type="text" id="username" name="_username" class="form-control" placeholder="{{ 'adres email'|trans }}"
-		aria-describedby="basic-addon1" value="" required="required" /><span class="input-group-addon" id="basic-addon1">@example.com</span>
+	<input type="email" id="username" name="_username" class="form-control" placeholder="{{ 'adres email'|trans }}"
+		aria-describedby="basic-addon1" value="" required="required" /><span class="input-group-addon" id="basic-addon1">@</span>
 	</div>
 
 <input type="password" id="password" name="_password" class="form-control" placeholder="{{ 'podaj hasło'|trans }}" required="required" />
+
+<div class="checkbox">
+<label>
 <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+</label>
 <label for="remember_me">{{ 'Pamiętaj mnie'|trans }}</label>
-<br> 
-<input type="submit" id="_submit" name="_submit" class="btn btn-primary" value="{{ 'Zaloguj się'|trans }}" /> <span class="glyphicon glyphicon-log-in"></span>
+</div>
+<br>
+<input type="submit" id="_submit" name="_submit" class="btn btn-lg btn-primary btn-block" value="{{ 'Zaloguj się'|trans }}" />
 <br>
 </form>
+<br>
 <img src="http://www.podpiselektroniczny.kalisz.pl/wp-content/uploads/2013/05/klucz.jpg" width="500" height="500"/>
+</div>
+{% endblock %}
 
 
-
->>>>>>> upstream/master
 {% endblock fos_user_content %}
 
 
