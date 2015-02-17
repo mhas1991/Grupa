@@ -6,47 +6,57 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Filmy
- * 
- * @ORM\Entity
+ *
  * @ORM\Table(name="filmy")
+ * @ORM\Entity
  */
  
  class Filmy
 {
-	/**
-      * @ORM\Id
-      * @ORM\Column(type="integer")
-      * @ORM\GeneratedValue(strategy="AUTO")
-      */
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+	 
 	private $id;
 	
 	/**
-      * @ORM\Column(type="string", length=200)
+      * @var string
+	  * @ORM\Column(name="tytul", type="string", length=255)
       */
 	private $tytul;
 	
 	/**
-      * @ORM\Column(type="text")
+	  * @var string
+      * @ORM\Column(name="opis", type="string", length=255)
       */
 	private $opis;
 	
 	/**
-      * @ORM\Column(type="text")
-      */
+	  * @var string
+      * @ORM\Column(name="recenzje", type="string", length=255)
+	  */
+	  
 	private $recenzje;
 	
 	/**
-      * @ORM\Column(type="decimal", scale=2)
+      * @var string
+      * @ORM\Column(name="cena", type="decimal", scale=2)
       */
 	private $cena;
 
 	/**
-      * @ORM\Column(type="decimal", scale=2)
+      * @var string
+      * @ORM\Column(name="ocena", type="decimal", length=255)
       */
 	private $ocena;	
 	
 	/**
-      * @ORM\Column(type="text")
+      * @var string
+      * @ORM\Column(name="listaAktorow", type="string", length=255)
       */
 	private $listaAktorow;
 	
@@ -197,5 +207,46 @@ use Doctrine\ORM\Mapping as ORM;
     public function getListaAktorow()
     {
         return $this->listaAktorow;
+    }
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->films = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add films
+     *
+     * @param \Grupa\ProjektBundle\Entity\Filmy $films
+     * @return Film
+     */
+    public function addFilms(\Grupa\ProjektBundle\Entity\Filmy $films)
+    {
+        $this->films[] = $films;
+
+        return $this;
+    }
+
+    /**
+     * Remove films
+     *
+     * @param \Grupa\ProjektBundle\Entity\Filmy $films
+     */
+    public function removeFilms(\Grupa\ProjektBundle\Entity\Filmy $films)
+    {
+        $this->films->removeElement($films);
+    }
+
+    /**
+     * Get films
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getFilms()
+    {
+        return $this->films;
     }
 }

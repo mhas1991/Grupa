@@ -1,27 +1,35 @@
-grupa_projekt_index:
-    path:     /index
-    defaults: { _controller: GrupaProjektBundle:Index:index }
+grupa_projekt_homepage:
+    path:     /
+    defaults: { _controller: GrupaProjektBundle:Index:showIndex }
 
 grupa_projekt_filmy:
-    path:    /filmy
-    defaults: { _controller:GrupaProjektBundle:Filmy:filmy }
-
-grupa_projekt_movie:
-    path:    /filmy/{slug}
-    defaults: { _controller:GrupaProjektBundle:Filmy:movie }
+    path:     /filmy
+    defaults: { _controller: GrupaProjektBundle:Filmy:showFilm }
 
 grupa_projekt_logowanie:
     path:    /login
-    defaults: { _controller:GrupaProjektBundle:Index:logowanie }
+    defaults: { _controller: GrupaProjektBundle:Security:logowanie }
 
 grupa_projekt_zalogowany:
     path:    /zalogowany
-    defaults: { _controller:GrupaProjektBundle:Index:zalogowany }
+    defaults: { _controller: GrupaProjektBundle:Security:zalogowany }
 
 grupa_projekt_recenzja:
     path:    /zalogowany/recenzja
-    defaults: { _controller:GrupaProjektBundle:Index:recenzja }
+    defaults: { _controller: GrupaProjektBundle:Security:recenzja }
 
-grupa_projekt_index:
-    path:    /
-    defaults: { _controller:GrupaProjektBundle:DodajFilmy:dodajFilm }
+grupa_projekt_admin_dodaj:
+    path:     /admin/dodaj
+    defaults: { _controller: GrupaProjektBundle:Admin:dodajFilm }
+
+grupa_projekt_admin_usun:
+    path:     /admin/usun
+    defaults: { _controller: GrupaProjektBundle:Admin:usunFilm }
+
+grupa_projekt_admin_panel:
+    path:     /admin/panel
+    defaults: { _controller: GrupaProjektBundle:Admin:panel }
+
+grupa_projekt_order:
+    path:     /order
+    defaults: { _controller: GrupaProjektBundle:Order:orderShow }

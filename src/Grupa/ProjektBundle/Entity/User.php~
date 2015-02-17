@@ -229,4 +229,60 @@ class User extends BaseUser
     {
         return $this->telefon;
     }
+
+    /**
+     * Get idKlienta
+     *
+     * @return integer 
+     */
+    public function getIdKlienta()
+    {
+        return $this->idKlienta;
+    }
+
+    /**
+     * Set adresEmail
+     *
+     * @param string $adresEmail
+     * @return User
+     */
+    public function setAdresEmail($adresEmail)
+    {
+        $this->adresEmail = $adresEmail;
+
+        return $this;
+    }
+
+    /**
+     * Get adresEmail
+     *
+     * @return string 
+     */
+    public function getAdresEmail()
+    {
+        return $this->adresEmail;
+    }
+
+    /**
+     * Set haslo
+     *
+     * @param string $haslo
+     * @return User
+     */
+    public function setHaslo($haslo)
+    {
+        $this->haslo = $haslo;
+
+        return $this;
+    }
+
+    /**
+     * Get haslo
+     *
+     * @return string 
+     */
+    public function getHaslo()
+    {
+        return $this->haslo;
+    }
 }

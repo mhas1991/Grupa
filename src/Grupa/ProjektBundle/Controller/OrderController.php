@@ -6,14 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
 
-class IndexController extends Controller
+class OrderController extends Controller
 
 {
-	public function showIndexAction()
-	{
-		return $this->render('GrupaProjektBundle:Index:index.html.twig');
-	}
 
-
+	public function orderShowAction()
+		{
+			return $this->render('GrupaProjektBundle:Order:order.html.twig');
+		}
 
 }

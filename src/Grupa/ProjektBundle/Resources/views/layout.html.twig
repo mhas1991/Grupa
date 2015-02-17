@@ -2,51 +2,69 @@
 
 <html>
 	<head>
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>FILMOMANIAK</title>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="{{ asset('bundles/grupaprojekt/css/bootstrap.css') }}">
-		<link rel="stylesheet" type="text/css" href="{{ asset('bundles/grupaprojekt/css/style.css') }}">
-		<script src="{{ asset('bundles/grupaprojekt/js/jquery-2.1.3.js') }}"></script>
-		<script src="{{ asset('bundles/grupaprojekt/js/bootstrap.js') }}"></script>	</head>
-	<body>
-		<header>
-		<div class="container">
-			<header class="row">
-				<div class="page-header text-uppercase">
-					{% block header %}
-					{% endblock %}
-				</div>			
-		</header>
-			{% if is_granted('ROLE_USER') %}
-				<div class="row">
-					<p>
-						Jesteś zalogowany jako {{app.user.username}}. 
-						<a href="{{path('fos_user_security_logout')}}" class="btn btn-primary">Wyloguj</a>
-					</p>
-				</div>
-			{% else %}
-				<p>
-					Nie jesteś zalogowany - 
-					<a href="{{path('fos_user_security_login')}}" class="btn btn-primary">Zaloguj</a>
-					Jeśli nie masz konta - <a href="{{path('fos_user_registration_register')}}" class="btn btn-primary">Zarejestruj się</a>
-				</p>
-			{% endif %}
-			<div class="row">
-				<div class="col-md-4">
-					{% block menu %}
-					{% endblock %}
-				</div>
-				<div class="col-md-8">
-					{% block content %}
-						{% block fos_user_content %}
-						{% endblock %}
-					{% endblock %}
-				</div>
-			</div>
-			<footer class="row">
-				<p>(c) Copyright Paweł Futa, Grzegorz Futa, Marcin Has</p>
-			</footer>
-		</div>	</body>
-	</body>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	</head>
+
+	<body>
+		
+		<nav class="nav navbar-nav navbar-left" role="navigation">
+		    <div class="container-fluid">
+			  <div class="navbar-header">
+				<ul class="nav navbar-nav navbar-center">		      
+			  <a class="navbar-brand" href="{{ path ('grupa_projekt_homepage')}}">
+		          <span class="nav-logo">  HOME <i class="glyphicon glyphicon-facetime-video"></i></span>
+		        </a>
+		        
+		        <li class="dropdown">
+		          <a href="{{ path ('grupa_projekt_filmy')}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Filmy <span class="caret"></span></a>
+		        </li>
+				<li><a href="{{ path ('grupa_projekt_admin_panel')}}">Admin</a></li>
+		      	<li><a class="navbar-brand" href="{{ path ('grupa_projekt_order')}}">
+		          <span class="nav-logo"> KOSZYK <i class="glyphicon glyphicon-shopping-cart"></i></span>
+		        </a></li>
+				<li><a href="{{ path ('grupa_projekt_logowanie') }}"><button type="submit" class="btn btn-primary">Logowanie</button></a></li>
+		        <li><a href="#"><button type="submit" class="btn btn-primary">Rejestracja</button></a></li>
+				</ul>
+				</div>
+		  </nav>
+		  
+		<nav class="nav navbar-nav navbar-right" role="navigation">
+		      <form class="navbar-form navbar-right" role="search">
+		        <div class="form-group">
+		          <input type="text" class="form-control" placeholder="Szukaj Filmu">
+		        </div>
+		        <button type="submit" class="btn btn-danger ">Szukaj</button>
+		      </form>
+		    </div>
+		  </nav>
+		<br>
+		<div class="row">
+			<div class="col-xs-6 col-md-3">
+				<!-- 16:9 aspect ratio -->
+		<div class="embed-responsive embed-responsive-16by9">
+		  <iframe width="100" height="50" src="https://www.youtube.com/embed/-e_v8uJebLI" frameborder="1" allowfullscreen></iframe>
+		</div>
+		</div>
+		 </div>
+
+		<div class="container">
+			<footer class="row">
+				(c) Copyright Paweł Futa, Grzegorz Futa, Marcin Has i zmienna
+			</footer>
+		</div>
+
+	</body>
 </html>
