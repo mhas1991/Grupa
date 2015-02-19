@@ -13,7 +13,10 @@ class IndexController extends Controller
 	{
 		return $this->render('GrupaProjektBundle:Index:index.html.twig');
 	}
-
+	public function logowanieAction()
+	{
+		return $this->render('GrupaProjektBundle:Uzytkownik:logowanie.html.twig');
+	}
 
 
 }

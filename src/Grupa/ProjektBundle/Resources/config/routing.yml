@@ -6,18 +6,6 @@ grupa_projekt_filmy:
     path:     /filmy
     defaults: { _controller: GrupaProjektBundle:Filmy:showFilm }
 
-grupa_projekt_logowanie:
-    path:    /login
-    defaults: { _controller: GrupaProjektBundle:Security:logowanie }
-
-grupa_projekt_zalogowany:
-    path:    /zalogowany
-    defaults: { _controller: GrupaProjektBundle:Security:zalogowany }
-
-grupa_projekt_recenzja:
-    path:    /zalogowany/recenzja
-    defaults: { _controller: GrupaProjektBundle:Security:recenzja }
-
 grupa_projekt_admin_dodaj:
     path:     /admin/dodaj
     defaults: { _controller: GrupaProjektBundle:Admin:dodajFilm }
@@ -33,3 +21,7 @@ grupa_projekt_admin_panel:
 grupa_projekt_order:
     path:     /order
     defaults: { _controller: GrupaProjektBundle:Order:orderShow }
+
+grupa_projekt_logowanie:
+    path:     /logowanie
+    defaults: { _controller: GrupaProjektBundle:Index:logowanie }
