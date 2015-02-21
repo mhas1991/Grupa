@@ -18,64 +18,85 @@
     <![endif]-->
 	</head>
 
-	<body>
+	<body style="background-color:pink">
 		<header>
-		
+			<div style="position:fixed; background-color:white; z-index:2; width:1450px; height:64px">
+					<div class="container-fluid">
+							<div class="navbar-header">
+									<ul class="nav navbar-nav navbar-center">	
+								<!-- Przycisk HOME -->
+								  <a class="navbar-brand" href="{{ path ('grupa_projekt_homepage')}}">
+									  <span class="nav-logo">  HOME <i class="glyphicon glyphicon-facetime-video"></i></span>
+									</a>
+								<!-- button Filmy -->   
+									<li class="dropdown">
+									  <a href="{{ path ('grupa_projekt_filmy')}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Filmy <span class="caret"></span></a>
+									</li>
+								 <!-- button dodaj recenzję -->
+									<li><a href="{{ path ('grupa_projekt_recenzja') }}">Dodaj recenzję <span class="glyphicon glyphicon-eye-open"></span></a></li>
+								 <!-- button Admin -->  
+								 {% if is_granted('ROLE_ADMIN') %}
+									<li><a href="{{ path ('grupa_projekt_admin_panel')}}">Admin</a></li>
+								{% endif %}
+								 <!-- button Koszyk -->  
+									<li><a class="navbar-brand" href="{{ path ('grupa_projekt_pokaz_koszyk') }}">
+									  <span class="nav-logo"> KOSZYK <i class="glyphicon glyphicon-shopping-cart"></i></span>
+									</a></li>
+									<form class="navbar-form navbar-left" role="search" style="padding:0px 100px 0px 0px">
+									<div class="form-group">
+									  <input type="text" class="form-control" placeholder="Szukaj Filmu">
+									</div>
+									<button type="submit" class="btn btn-danger ">Szukaj</button>
+									</form>
+
+								{% if not is_granted('ROLE_USER') %}
+								 <!-- button Logowanie -->
+									<li><a href="{{ path('fos_user_security_login')}}"><button type="submit" class="btn btn-primary">Logowanie <span class="glyphicon glyphicon-user"></span></button></a></li>
+								{% endif %}
+								{% if is_granted('ROLE_USER') %}
+								 <!-- button Wylogowanie -->
+									<li><a href="{{ path('fos_user_security_logout')}}"><button type="submit" class="btn btn-primary">Wyloguj<span class="glyphicon glyphicon-user"></span></button></a></li>
+
+								{% endif %}
+								
+								{% if not is_granted('ROLE_USER') %}
+								 <!-- button Rejestracja -->  
+									<li><a href="{{path('fos_user_registration_register')}}"><button type="submit" class="btn btn-primary" style="background-color:pink">Rejestracja <span class="glyphicon glyphicon-user"></span>&nbsp;<span class="glyphicon glyphicon-plus"></span>&nbsp;<span class="glyphicon glyphicon-user"></span>&nbsp;<span class="glyphicon glyphicon-plus"></span>&nbsp;...</button></a></li>
+									</ul>
+									
+								{% endif %}
+							</div>
+
+					</div>
+			</div>
 		
 		</header>
-		
-
-		<nav class="nav navbar-nav navbar-left" role="navigation">
-		    <div class="container-fluid">
-			  <div class="navbar-header">
-				<ul class="nav navbar-nav navbar-center">	
-			<!-- Przycisk HOME -->
-			  <a class="navbar-brand" href="{{ path ('grupa_projekt_homepage')}}">
-		          <span class="nav-logo">  HOME <i class="glyphicon glyphicon-facetime-video"></i></span>
-		        </a>
-		    <!-- button Filmy -->   
-		        <li class="dropdown">
-		          <a href="{{ path ('grupa_projekt_filmy')}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Filmy <span class="caret"></span></a>
-		        </li>
-			 <!-- button Admin -->  
-				<li><a href="{{ path ('grupa_projekt_admin_panel')}}">Admin</a></li>
-			 <!-- button Koszyk -->  
-		      	<li><a class="navbar-brand" href="{{ path ('grupa_projekt_order')}}">
-		          <span class="nav-logo"> KOSZYK <i class="glyphicon glyphicon-shopping-cart"></i></span>
-		        </a></li>
-			 <!-- button Logowanie -->  
-				<li><a href="{{ path('grupa_projekt_logowanie')}}"><button type="submit" class="btn btn-primary">Logowanie</button></a></li>
-			 <!-- button Rejestracja -->  
-		        <li><a href="{{path('fos_user_registration_register')}}"><button type="submit" class="btn btn-primary">Rejestracja</button></a></li>
-				</ul>
-				</div>
-		  </nav>
-		  
-    
-		   <!-- Formularz do wyszukiwania -->  
-		<nav class="nav navbar-nav navbar-right" role="navigation">
-		      <form class="navbar-form navbar-right" role="search">
-		        <div class="form-group">
-		          <input type="text" class="form-control" placeholder="Szukaj Filmu">
-		        </div>
-		        <button type="submit" class="btn btn-danger ">Szukaj</button>
-		      </form>
-		    </div>
-		  </nav>
 		<br>
-		<section>
- 		<div class="row">
-			<div class="col-xs-6 col-md-3">
-				<!-- 16:9 aspect ratio -->
-		<div class="embed-responsive embed-responsive-16by9">
-		  <iframe width="100" height="50" src="https://www.youtube.com/embed/-e_v8uJebLI" frameborder="1" allowfullscreen></iframe>
-		</div>
-		</div>
-		 </div>
-		</section>
-		<div class="container">
-			<footer class="row">
-				(c) Copyright Paweł Futa, Grzegorz Futa, Marcin Has i zmienna
+		<br>
+
+ 
+				<div>
+				   <!-- Formularz do wyszukiwania -->  
+				<nav class="nav navbar-nav navbar-right" role="navigation">
+
+					
+					</nav>
+				</div>
+			<br><br><br>
+			
+
+		{% block content %}
+
+		{% endblock %}
+		
+		<br><br><br><br>
+
+<!-- 		<h5 align="right" style="font-weight:bold; padding:450px 5px 0px 0px; box-sizing:border-box"><a href="#">Powrót do góry</h5>
+		<h1 align="right" style="padding:0px 5px 0px 0px"><span class="glyphicon glyphicon-circle-arrow-up"></span></h1></a> -->
+
+		<div class="container" style="box-sizing:border-box">
+			<footer class="row" style="color:blue; position:relative; bottom:1px">
+				<span class="glyphicon glyphicon-copyright-mark"></span> Copyright Paweł Futa, Grzegorz Futa, Marcin Has i zmienna
 			</footer>
 		</div>
 

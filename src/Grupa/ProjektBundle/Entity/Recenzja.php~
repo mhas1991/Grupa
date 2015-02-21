@@ -1,0 +1,55 @@
+<?php
+
+namespace Grupa\ProjektBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Grupa\ProjektBundle\Entity\User as User;
+use Grupa\ProjektBundle\Entity\Film as Film;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table()
+ */
+ 
+ class Recenzja
+ {
+     /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+	protected $id;
+ 
+ 	/**
+	* @ORM\ManyToOne(targetEntity="Film", inversedBy="recenzje")
+	* @ORM\JoinColumn(name="film_id", referencedColumnName="id")
+	*/
+	protected $film;
+	
+	/**
+	* @ORM\ManyToOne(targetEntity="User", inversedBy="recenzje")
+	* @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+	*/
+	protected $user;
+	
+	/**
+    * @ORM\Column(type="string", length=900)
+	*/
+	protected $tresc;
+ 
+ 	/**
+    * @ORM\Column(type="datetime", name="data_recenzji")
+	*/
+	protected $dataRecenzji;
+
+ 	/**
+    * @ORM\Column(type="integer", name="status_recenzji", options = {"default"="0"})
+	*/
+	protected $statusRecenzji;	
+	
+	public function __construct()
+	{
+		$this->dataRecenzji = new \DateTime('now');
+	}
+	
+ }

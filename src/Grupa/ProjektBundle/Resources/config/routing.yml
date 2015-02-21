@@ -18,10 +18,13 @@ grupa_projekt_admin_panel:
     path:     /admin/panel
     defaults: { _controller: GrupaProjektBundle:Admin:panel }
 
-grupa_projekt_order:
-    path:     /order
-    defaults: { _controller: GrupaProjektBundle:Order:orderShow }
-
 grupa_projekt_logowanie:
     path:     /logowanie
     defaults: { _controller: GrupaProjektBundle:Index:logowanie }
+grupa_projekt_recenzja:
+    path:    /zalogowany/recenzja
+    defaults: { _controller: GrupaProjektBundle:Recenzja:showRecenzjaLog }
+
+grupa_projekt_pokaz_koszyk:
+    path:     /Koszyk
+    defaults: { _controller: GrupaProjektBundle:Koszyk:pokazKoszyk }

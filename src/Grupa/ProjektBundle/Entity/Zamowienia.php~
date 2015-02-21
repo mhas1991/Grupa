@@ -1,0 +1,49 @@
+<?php
+
+namespace Grupa\ProjektBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Grupa\ProjektBundle\Entity\User as User;
+use Doctrine\Common\Collections\ArrayCollection;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table()
+ */
+ 
+ class Zamowienia
+ {
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+	protected $id;
+	
+	/**
+	* @ORM\ManyToMany(targetEntity="Film", mappedBy="zamowienie")
+	*/
+	protected $filmy;
+
+	/**
+	* @ORM\Column(type="datetime", name="data_zamowienia")
+	*/
+	protected $dataZamowienia;
+	
+	public function __construct()
+	{
+		$this->filmy = new ArrayCollection();
+		$this->dataZamowienia = new \DateTime('now');
+	}
+	
+	/**
+	* @ORM\ManyToOne(targetEntity="User", inversedBy="zamowienia")
+	* @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+	*/
+	protected $user;
+	
+	/**
+	* @ORM\Column(type="datetime", name="data_realizacji", nullable=true)
+	*/
+	protected $dataRealizacji;
+ }

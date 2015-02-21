@@ -5,10 +5,12 @@ namespace Grupa\ProjektBundle\Entity;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Grupa\ProjektBundle\Entity\Recenzja as Recenzja;
+use Grupa\ProjektBundle\Entity\Zamowienia as Zamowienia;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="user")
+ * @ORM\Table()
  */
 class User extends BaseUser
 {
@@ -17,49 +19,26 @@ class User extends BaseUser
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $idKlienta;
+    protected $id;
 
 	/**
-      * @ORM\Column(type="string", length=40)
+      * @ORM\OneToMany(targetEntity="Zamowienia", mappedBy="user")
       */
-	private $imie;
+	protected $zamowienia;
 	
 	/**
-      * @ORM\Column(type="string", length=40)
+      * @ORM\OneToMany(targetEntity="Recenzja", mappedBy="user")
       */
-	private $nazwisko;
+	protected $recenzje;
 	
-	/**
-      * @ORM\Column(type="string", length=11)
-      */
-	private $pesel;
+	public function __construct()
+	{
+		parent::__construct();
+		$this->zamowienia = new ArrayCollection();
+		$this->recenzje = new ArrayCollection();
+	}
 	
-	/**
-      * @ORM\Column(type="string", length=40)
-      */
-	private $typUsera;
 
-	/**
-      * @ORM\Column(type="string", length=40)
-      */
-	
-	private $adresEmail;
-	
-	/**
-      * @ORM\Column(type="decimal", scale=2)
-      */
-	private $iloscWypozyczen;	
-	
-	/**
-      * @ORM\Column(type="string", length=40)
-      */
-	private $telefon;
-	
-	/**
-      * @ORM\Column(type="string", length=40)
-      */
-	private $haslo;
-	
     /**
      * Get id
      *
@@ -71,219 +50,68 @@ class User extends BaseUser
     }
 
     /**
-     * Set imie
+     * Add zamowienia
      *
-     * @param string $imie
+     * @param \Grupa\ProjektBundle\Entity\Zamowienia $zamowienia
      * @return User
      */
-    public function setImie($imie)
+    public function addZamowienium(\Grupa\ProjektBundle\Entity\Zamowienia $zamowienia)
     {
-        $this->imie = $imie;
+        $this->zamowienia[] = $zamowienia;
 
         return $this;
     }
 
     /**
-     * Get imie
+     * Remove zamowienia
      *
-     * @return string 
+     * @param \Grupa\ProjektBundle\Entity\Zamowienia $zamowienia
      */
-    public function getImie()
+    public function removeZamowienium(\Grupa\ProjektBundle\Entity\Zamowienia $zamowienia)
     {
-        return $this->imie;
+        $this->zamowienia->removeElement($zamowienia);
     }
 
     /**
-     * Set nazwisko
+     * Get zamowienia
      *
-     * @param string $nazwisko
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getZamowienia()
+    {
+        return $this->zamowienia;
+    }
+
+    /**
+     * Add recenzje
+     *
+     * @param \Grupa\ProjektBundle\Entity\Recenzja $recenzje
      * @return User
      */
-    public function setNazwisko($nazwisko)
+    public function addRecenzje(\Grupa\ProjektBundle\Entity\Recenzja $recenzje)
     {
-        $this->nazwisko = $nazwisko;
+        $this->recenzje[] = $recenzje;
 
         return $this;
     }
 
     /**
-     * Get nazwisko
+     * Remove recenzje
      *
-     * @return string 
+     * @param \Grupa\ProjektBundle\Entity\Recenzja $recenzje
      */
-    public function getNazwisko()
+    public function removeRecenzje(\Grupa\ProjektBundle\Entity\Recenzja $recenzje)
     {
-        return $this->nazwisko;
+        $this->recenzje->removeElement($recenzje);
     }
 
     /**
-     * Set pesel
+     * Get recenzje
      *
-     * @param string $pesel
-     * @return User
+     * @return \Doctrine\Common\Collections\Collection 
      */
-    public function setPesel($pesel)
+    public function getRecenzje()
     {
-        $this->pesel = $pesel;
-
-        return $this;
-    }
-
-    /**
-     * Get pesel
-     *
-     * @return string 
-     */
-    public function getPesel()
-    {
-        return $this->pesel;
-    }
-
-    /**
-     * Set typUsera
-     *
-     * @param string $typUsera
-     * @return User
-     */
-    public function setTypUsera($typUsera)
-    {
-        $this->typUsera = $typUsera;
-
-        return $this;
-    }
-
-    /**
-     * Get typUsera
-     *
-     * @return string 
-     */
-    public function getTypUsera()
-    {
-        return $this->typUsera;
-    }
-
-    /**
-     * Set email
-     *
-     * @param string $email
-     * @return User
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * Get email
-     *
-     * @return string 
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * Set iloscWypozyczen
-     *
-     * @param string $iloscWypozyczen
-     * @return User
-     */
-    public function setIloscWypozyczen($iloscWypozyczen)
-    {
-        $this->iloscWypozyczen = $iloscWypozyczen;
-
-        return $this;
-    }
-
-    /**
-     * Get iloscWypozyczen
-     *
-     * @return string 
-     */
-    public function getIloscWypozyczen()
-    {
-        return $this->iloscWypozyczen;
-    }
-
-    /**
-     * Set telefon
-     *
-     * @param string $telefon
-     * @return User
-     */
-    public function setTelefon($telefon)
-    {
-        $this->telefon = $telefon;
-
-        return $this;
-    }
-
-    /**
-     * Get telefon
-     *
-     * @return string 
-     */
-    public function getTelefon()
-    {
-        return $this->telefon;
-    }
-
-    /**
-     * Get idKlienta
-     *
-     * @return integer 
-     */
-    public function getIdKlienta()
-    {
-        return $this->idKlienta;
-    }
-
-    /**
-     * Set adresEmail
-     *
-     * @param string $adresEmail
-     * @return User
-     */
-    public function setAdresEmail($adresEmail)
-    {
-        $this->adresEmail = $adresEmail;
-
-        return $this;
-    }
-
-    /**
-     * Get adresEmail
-     *
-     * @return string 
-     */
-    public function getAdresEmail()
-    {
-        return $this->adresEmail;
-    }
-
-    /**
-     * Set haslo
-     *
-     * @param string $haslo
-     * @return User
-     */
-    public function setHaslo($haslo)
-    {
-        $this->haslo = $haslo;
-
-        return $this;
-    }
-
-    /**
-     * Get haslo
-     *
-     * @return string 
-     */
-    public function getHaslo()
-    {
-        return $this->haslo;
+        return $this->recenzje;
     }
 }

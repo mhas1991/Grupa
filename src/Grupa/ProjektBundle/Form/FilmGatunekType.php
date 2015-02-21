@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class FilmyType extends AbstractType
+class FilmGatunekType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -15,12 +15,7 @@ class FilmyType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('tytul')
-            ->add('opis')
-            ->add('recenzje')
-            ->add('cena')
-            ->add('ocena')
-            ->add('listaAktorow')
+            ->add('name')
         ;
     }
     
@@ -30,7 +25,7 @@ class FilmyType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Grupa\ProjektBundle\Entity\Filmy'
+            'data_class' => 'Grupa\ProjektBundle\Entity\FilmGatunek'
         ));
     }
 
@@ -39,6 +34,6 @@ class FilmyType extends AbstractType
      */
     public function getName()
     {
-        return 'grupa_projektbundle_filmy';
+        return 'grupa_projektbundle_filmgatunek';
     }
 }

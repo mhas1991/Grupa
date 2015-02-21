@@ -1,0 +1,31 @@
+<?php
+
+namespace Grupa\ProjektBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Grupa\ProjektBundle\Entity\Film as Film;
+use Doctrine\Common\Collections\ArrayCollection;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table()
+ */
+ 
+ class FilmGatunek
+{
+	/**
+	 * @ORM\Id
+	 * @ORM\Column(type="string")
+	 */
+	protected $name;
+
+	/**
+	* @ORM\OneToMany(targetEntity="Film", mappedBy="gatunek")
+	*/
+	protected $filmy;
+
+	public function __construct()
+	{
+		$this->filmy = new ArrayCollection();
+	}
+}

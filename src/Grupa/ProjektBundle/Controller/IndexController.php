@@ -4,7 +4,7 @@ namespace Grupa\ProjektBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
-
+use Grupa\ProjektBundle\Entity\Filmy;
 
 class IndexController extends Controller
 
@@ -17,6 +17,5 @@ class IndexController extends Controller
 	{
 		return $this->render('GrupaProjektBundle:Uzytkownik:logowanie.html.twig');
 	}
-
 
 }
