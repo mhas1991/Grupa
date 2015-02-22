@@ -2,10 +2,6 @@ grupa_projekt:
     resource: "@GrupaProjektBundle/Resources/config/routing.yml"
     prefix:   /
 
-uek_demo:
-    resource: "@UekDemoBundle/Resources/config/routing.yml"
-    prefix:   /demo
-
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 

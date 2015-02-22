@@ -1,34 +1,99 @@
 <!DOCTYPE HTML>
 
 <html>
-<meta charset="UTF-8">
 	<head>
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>FILMOMANIAK</title>
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="{{ asset('bundles/grupaprojekt/css/style.css') }}">
+		<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>		
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>	
 	</head>
-	<body>
+
+	<body style="background-color:#B6B6B6">
 		<header>
-			<ul class="nav nav-pills">
-  			<li role="presentation" class="active"><a href="index.html.twig">Home <span class="glyphicon glyphicon-home"></span></a></li>
-  			
-  		</ul>
+			<div style="position:fixed; background-color:white; z-index:2; width:1450px; height:64px">
+					<div class="container-fluid">
+							<div class="navbar-header">
+									<ul class="nav nav-pills" style="padding: 5px 0px 0px 0px">	
+								<!-- Przycisk HOME -->
+								  <li role="presentation" class="active" ><a href="{{ path ('grupa_projekt_homepage')}}">
+								  HOME <i class="glyphicon glyphicon-facetime-video"></i></a></li>
+
+								 <!-- button dodaj recenzję -->
+									<li role="presentation" class="active"><a href="{{ path ('grupa_projekt_recenzja') }}">Dodaj recenzję <span class="glyphicon glyphicon-eye-open"></span></a></li>
+								 <!-- button Admin -->  
+								 {% if is_granted('ROLE_ADMIN') %}
+									<li role="presentation" class="active"><a href="{{ path ('grupa_projekt_admin_panel')}}">Admin</a></li>
+								{% endif %}
+								 <!-- button Koszyk -->  
+									<li role="presentation" class="active"><a href="{{ path ('grupa_projekt_pokaz_koszyk') }}">
+									  <span class="nav-logo"> KOSZYK <i class="glyphicon glyphicon-shopping-cart"></i></span>
+									</a></li>
+								{% if is_granted('ROLE_USER') %}
+									<li role="presentation" class="active"><a href="{{ path ('grupa_projekt_show_zamowienia')}}">Zamówienia</a></li>
+								{% endif %}
+									<form class="navbar-form navbar-left" role="search" style="padding:0px 100px 0px 0px">
+									<div class="form-group">
+									  <input type="text" class="form-control" placeholder="Szukaj Filmu">
+									</div>
+									<button type="submit" class="btn btn-danger ">Szukaj</button>
+									</form>
+
+								{% if not is_granted('ROLE_USER') %}
+								 <!-- button Logowanie -->
+									<li><a href="{{ path('fos_user_security_login')}}"><button type="submit" class="btn btn-success">Logowanie <span class="glyphicon glyphicon-user"></span></button></a></li>
+								{% endif %}
+								{% if is_granted('ROLE_USER') %}
+								 <!-- button Wylogowanie -->
+									<li><a href="{{ path('fos_user_security_logout')}}"><button type="submit" class="btn btn-success">Wyloguj<span class="glyphicon glyphicon-user"></span></button></a></li>
+
+								{% endif %}
+															
+								{% if not is_granted('ROLE_USER') %}
+								 <!-- button Rejestracja -->  
+									<li><a href="{{path('fos_user_registration_register')}}"><button type="submit" class="btn btn-warning">Rejestracja <span class="glyphicon glyphicon-user"></span>&nbsp;<span class="glyphicon glyphicon-plus"></span></button></a></li>
+									</ul>
+									
+								{% endif %}
+							</div>
+
+					</div>
+			</div>
+		
 		</header>
-		<section id="content">
+		<br>
+		<br>
+
+ 
+				<div>
+				   <!-- Formularz do wyszukiwania -->  
+				<nav class="nav navbar-nav navbar-right" role="navigation">
+
+					
+					</nav>
+				</div>
+			<br><br><br>
+			
+
 		{% block content %}
 
 		{% endblock %}
-		</section>
-		<footer>
-			Copyright <span class="glyphicon glyphicon-copyright-mark"></span> Grzegorz Futa & Paweł Futa
-		</footer>
-	</body>
-	
+		
+		<br><br><br><br>
 
+<!-- 		<h5 align="right" style="font-weight:bold; padding:450px 5px 0px 0px; box-sizing:border-box"><a href="#">Powrót do góry</h5>
+		<h1 align="right" style="padding:0px 5px 0px 0px"><span class="glyphicon glyphicon-circle-arrow-up"></span></h1></a> -->
+
+		<div class="container" style="box-sizing:border-box">
+			<footer class="row" style="color:blue; position:absolute; bottom:1px">
+				
+			</footer>
+		</div>
+
+	</body>
 </html>
