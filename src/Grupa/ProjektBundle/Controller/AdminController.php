@@ -3,15 +3,32 @@
 namespace Grupa\ProjektBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
-
+use Grupa\ProjektBundle\Entity\Film;
+use Grupa\ProjektBundle\Form\FilmType;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Form\FormBuilderInterface;
 
 class AdminController extends Controller
 
 {
-	public function dodajFilmAction()
+	public function dodajFilmAction(Request $request)
 	{
-		return $this->render('GrupaProjektBundle:Admin:dodajFilm.html.twig');
+	
+		$film = new Film();
+		$form = $this->createForm(
+			new FilmType(),
+			$film
+		);
+		
+		if ($request->isMethod('POST') && $form->handleRequest($request) && $form->isValid()) {
+			$em = $this->getDoctrine()->getManager();
+			$em->persist($movie);
+			$em->flush();
+		}
+	
+		return $this->render('GrupaProjektBundle:Admin:dodajFilm.html.twig', array(
+			'form' => $form->createView())
+			);
 	}
 
 	public function usunFilmAction()

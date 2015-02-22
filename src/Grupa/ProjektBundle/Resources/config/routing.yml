@@ -28,3 +28,7 @@ grupa_projekt_recenzja:
 grupa_projekt_pokaz_koszyk:
     path:     /Koszyk
     defaults: { _controller: GrupaProjektBundle:Koszyk:pokazKoszyk }
+
+grupa_projekt_show_zamowienia:
+    path:     /Zamowienia
+    defaults: { _controller: GrupaProjektBundle:Zamowienia:showZamowienia }
