@@ -38,4 +38,80 @@ class User extends BaseUser
 		$this->recenzje = new ArrayCollection();
 	}
 	
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Add zamowienia
+     *
+     * @param \Grupa\ProjektBundle\Entity\Zamowienia $zamowienia
+     * @return User
+     */
+    public function addZamowienium(\Grupa\ProjektBundle\Entity\Zamowienia $zamowienia)
+    {
+        $this->zamowienia[] = $zamowienia;
+
+        return $this;
+    }
+
+    /**
+     * Remove zamowienia
+     *
+     * @param \Grupa\ProjektBundle\Entity\Zamowienia $zamowienia
+     */
+    public function removeZamowienium(\Grupa\ProjektBundle\Entity\Zamowienia $zamowienia)
+    {
+        $this->zamowienia->removeElement($zamowienia);
+    }
+
+    /**
+     * Get zamowienia
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getZamowienia()
+    {
+        return $this->zamowienia;
+    }
+
+    /**
+     * Add recenzje
+     *
+     * @param \Grupa\ProjektBundle\Entity\Recenzja $recenzje
+     * @return User
+     */
+    public function addRecenzje(\Grupa\ProjektBundle\Entity\Recenzja $recenzje)
+    {
+        $this->recenzje[] = $recenzje;
+
+        return $this;
+    }
+
+    /**
+     * Remove recenzje
+     *
+     * @param \Grupa\ProjektBundle\Entity\Recenzja $recenzje
+     */
+    public function removeRecenzje(\Grupa\ProjektBundle\Entity\Recenzja $recenzje)
+    {
+        $this->recenzje->removeElement($recenzje);
+    }
+
+    /**
+     * Get recenzje
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getRecenzje()
+    {
+        return $this->recenzje;
+    }
 }

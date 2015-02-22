@@ -32,3 +32,31 @@ grupa_projekt_pokaz_koszyk:
 grupa_projekt_show_zamowienia:
     path:     /Zamowienia
     defaults: { _controller: GrupaProjektBundle:Zamowienia:showZamowienia }
+
+grupa_projekt_filmy_f1:
+    path:     /f1
+    defaults: { _controller: GrupaProjektBundle:Filmy:f1 }
+
+grupa_projekt_filmy_f2:
+    path:     /f2
+    defaults: { _controller: GrupaProjektBundle:Filmy:f2 }
+
+grupa_projekt_filmy_f3:
+    path:     /f3
+    defaults: { _controller: GrupaProjektBundle:Filmy:f3 }
+
+grupa_projekt_filmy_f4:
+    path:     /f4
+    defaults: { _controller: GrupaProjektBundle:Filmy:f4 }
+
+grupa_projekt_filmy_f5:
+    path:     /f5
+    defaults: { _controller: GrupaProjektBundle:Filmy:f5 }
+
+grupa_projekt_filmy_f6:
+    path:     /f6
+    defaults: { _controller: GrupaProjektBundle:Filmy:f6 }
+
+grupa_projekt_filmy_f7:
+    path:     /f7
+    defaults: { _controller: GrupaProjektBundle:Filmy:f7 }

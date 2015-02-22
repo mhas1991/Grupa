@@ -1,12 +1,134 @@
-{% extends "GrupaProjektBundle::menu.html.twig" %}
-{% block header %}
-	<head>
-		<title>FILMOMANIAK</title>
-{% endblock %}
+{% extends "GrupaProjektBundle::layout.html.twig" %}
 
 {% block content %}
 
-dupa maryny
-
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="panel panel-primary login-panel">
+			<nav style="padding:0px 0px 0px 50px">
+			  
+				<ul class="pagination">
+					<li class="disable"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+					<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+					<li class="disable"><a href="#">2 <span class="sr-only">(current)</span></a></li>
+					<li class="disable"><a href="#">3 <span class="sr-only">(current)</span></a></li>
+					<li class="disable"><a href="#">4 <span class="sr-only">(current)</span></a></li>
+					<li class="disable"><a href="#">5 <span class="sr-only">(current)</span></a></li>
+					<li class="disable"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+			  </ul>
+			</nav>
+			<nav style="text-align:center"><i class="label label-danger">TOP 5</i>			
+				<a><div class="embed-responsive embed-responsive-16by9">
+					<iframe width="260" height="215" src="https://www.youtube.com/embed/v4HAWRqSTyI" frameborder="0" allowfullscreen></iframe>
+				</a></div>
+			</nav>
+			<nav>
+				<ul class="pager">
+					<li><a href="#">Previous</a></li>
+					<li><a href="#">Next</a></li>
+			  </ul>
+			</nav>
+			</div>
+		</div>
+		<div class="col-md-8">
+		<div class="panel panel-default">
+			  <!-- Default panel contents -->
+			  <div class="panel-heading">LISTA FILMÓW</div>
+			  <!-- Table -->
+			<table class="table">
+					<tr>
+						<th>ID</th>
+						<th>TYTUŁ</th>
+						<th>OPIS</th>
+						<th>AKTORZY</th>
+						<th>CENA</th>
+						<th>OCENA</th>
+						<th>GATUNEK</th>
+						<th>OKŁADKA</th>
+					</tr>
+					<tr>
+					<th scope="row">1</th>
+						<td><a href="{{ path ('grupa_projekt_filmy_f1')}}">Milczenie Owiec</a></td>
+						<td>Seryjny morderca i inteligentna agentka łączą siły by znaleźć przestępcę obdzierającego ze skóry swoje ofiary</td>
+						<td>Anthony Hopkins, Jodie Foster, Ted Levine</td>
+						<td>150</td>
+						<td>10</td>
+						<td>Thriller</td>
+						<td><a href="{{ path ('grupa_projekt_filmy_f1')}}"><img src="{{asset('bundles/grupaprojekt/images/milczenie.jpg')}}" class="img-thumbnail" style="width: 75px; height: 100px;"></a></td>
+					</tr>
+					<tr>
+					<th scope="row">2</th>
+						<td><a href="{{ path ('grupa_projekt_filmy_f2')}}">Skazani na Shawshank</a></td>
+						<td>Adaptacja opowiadania Stephena Kinga Historia niesłusznie skazanego na dożywocie bankiera który musi przeżyć w brutalnym świecie rządzonym przez strażników i współwięźniów</td>
+						<td>Tim Robbins, Morgan Freeman, William Sadler</td>
+						<td>40</td>
+						<td>10</td>
+						<td>Dramat</td>
+						<td><a href="{{ path ('grupa_projekt_filmy_f2')}}"><img src="{{asset('bundles/grupaprojekt/images/Skazani na Shawshank.jpg')}}" class="img-thumbnail" style="width: 75px; height: 100px;"></td>
+					</tr>
+					<tr>
+					<th scope="row">3</th>
+						<td><a href="{{ path ('grupa_projekt_filmy_f3')}}">Nietykalni</a></td>
+						<td>Sparaliżowany milioner zatrudnia do opieki młodego chłopaka z przedmieścia który właśnie wyszedł z więzienia</td>
+						<td>Francois Cluzet, Omar Sy</td>
+						<td>60</td>
+						<td>9</td>
+						<td>Dramat</td>
+						<td><a href="{{ path ('grupa_projekt_filmy_f3')}}"><img src="{{asset('bundles/grupaprojekt/images/Nietykalni.jpg')}}" class="img-thumbnail" style="width: 75px; height: 100px;"</td>
+					</tr>
+					<tr>
+					<th scope="row">4</th>
+						<td><a href="{{ path ('grupa_projekt_filmy_f4')}}">Pulp Fiction</a></td>
+						<td>Przemoc i odkupienie w opowieści o dwóch płatnych mordercach pracujących na zlecenie mafii żonie gangstera bokserze i parze okradającej ludzi w restauracji</td>
+						<td>John Travolta Samuel L Jackson Uma Thurman Bruce Willis Tim Roth</td>
+						<td>100</td>
+						<td>10</td>
+						<td>Gangsterski</td>
+						<td><a href="{{ path ('grupa_projekt_filmy_f4')}}"><img src="{{asset('bundles/grupaprojekt/images/Pulp Fiction.jpg')}}" class="img-thumbnail" style="width: 75px; height: 100px;"</td>
+					</tr>
+					<tr>
+					<th scope="row">5</th>
+						<td><a href="{{ path ('grupa_projekt_filmy_f5')}}">Uprowadzenie Agaty</a></td>
+						<td>Cygan uciekinier z więzienia poznaje szesnastoletnią Agatę z którą zamierza wziąć ślub Przeciwny ich małżeństwu jest ojciec dziewczyny poseł obawiający się że związek ten mógłby zagrozić jego dalszej karierze politycznej</td>
+						<td>Karolina Rosińska Sławomir Federowicz   Jerzy Stuhr   Janusz Rewiński</td>
+						<td>35</td>
+						<td>9</td>
+						<td>Dramat</td>
+						<td><a href="{{ path ('grupa_projekt_filmy_f5')}}"><img src="{{asset('bundles/grupaprojekt/images/Uprowadzenie Agaty.jpg')}}" class="img-thumbnail" style="width: 75px; height: 100px;"</td>
+					</tr>
+					<tr>
+					<th scope="row">6</th>
+						<td><a href="{{ path ('grupa_projekt_filmy_f6')}}">Ojciec chrzestny III</a></td>
+						<td>Rok 1979 Starzejący się Michael Corleone chce zalegalizować swoje interesy i wyprowadzić rodzinę z mafijnego świata</td>
+						<td>Al Pacino Diane Keaton</td>
+						<td>80</td>
+						<td>9</td>
+						<td>Gangsterski</td>
+						<td><a href="{{ path ('grupa_projekt_filmy_f6')}}"><img src="{{asset('bundles/grupaprojekt/images/Ojciec Chrzestny.jpg')}}" class="img-thumbnail" style="width: 75px; height: 100px;"</td>
+					</tr>
+					<tr>
+					<th scope="row">7</th>
+						<td><a href="{{ path ('grupa_projekt_filmy_f7')}}">Służące</a></td>
+						<td>Lata 60 XX wieku Początkująca dziennikarka spisuje historie czarnoskórych służących wywołując skandal wśród wyższych sfer</td>
+						<td>Emma Stone Viola Davis</td>
+						<td>25</td>
+						<td>7</td>
+						<td>Dramat</td>
+						<td><a href="{{ path ('grupa_projekt_filmy_f7')}}"><img src="{{asset('bundles/grupaprojekt/images/Służące.jpg')}}" class="img-thumbnail" style="width: 75px; height: 100px;"</td>
+					</tr>
+			</table>
+				<nav>
+					  <ul class="pager">
+						<li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
+						<li class="next"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+					  </ul>
+				</nav>
+		</div>
+	
+	
+		</div>
+	</div>
+</div>
  
  {% endblock %}
